@@ -12,20 +12,23 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.travelbookingapp.features.bottombar.BottomNavigationBar
+import com.example.travelbookingapp.features.bottombar.ui.BottomNavigationBar
 import com.example.travelbookingapp.features.floatingbutton.FloatingButton
 import com.example.travelbookingapp.ui.theme.TravelBookingAppTheme
+import com.example.travelbookingapp.utils.Utils
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContent {
+            val navigation = Utils.getNavigationBar()
             TravelBookingAppTheme {
                 Scaffold(
                     modifier = Modifier.fillMaxSize(),
                     bottomBar = {
-                        BottomNavigationBar()
+                        BottomNavigationBar(navigation)
                     },
                     floatingActionButtonPosition = FabPosition.Center,
                     floatingActionButton = {
