@@ -10,4 +10,5 @@ data class NavigationBarItem(
 data class NavigationItemModel(
     val name: String,
     val icon: NavigationIconMenuItem,
+    val screen: String
 )

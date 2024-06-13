@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -23,21 +22,25 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.travelbookingapp.features.bottombar.model.NavigationBarItem
 import com.example.travelbookingapp.features.bottombar.model.NavigationItemModel
 
 @Composable
 fun BottomNavigationBar(
-    navigation: NavigationBarItem
+    navigation: NavigationBarItem,
+    navController : NavController
 ) {
 
     var selectedItem by remember { mutableIntStateOf(0) }
+    fun onTapMenuItem(menuItem : NavigationItemModel) {
+        selectedItem = navigation.items.indexOf(menuItem)
+        navController.navigate(menuItem.screen)
+    }
 
     val midButton = (navigation.items.count() / 2) + 1
-    NavigationBar(
-    ) {
+    NavigationBar{
         navigation.items.forEachIndexed { index, item ->
-
             if ((index + 1) == midButton) {
                 NavigationBarItem(
                     selected = false,
@@ -48,7 +51,7 @@ fun BottomNavigationBar(
             NavigationBarItem(
                 selected = selectedItem == index,
                 onClick = {
-                    selectedItem = index
+                    onTapMenuItem(item)
                 },
                 icon = {
                     BottomNavigationBarItemIcon(

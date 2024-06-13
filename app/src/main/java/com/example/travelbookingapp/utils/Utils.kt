@@ -12,19 +12,23 @@ object Utils {
             items = listOf(
                 NavigationItemModel(
                     name = "Home",
-                    icon = NavigationDrawbleIcon(R.drawable.icon_home)
+                    icon = NavigationDrawbleIcon(R.drawable.icon_home),
+                    screen = "home_screen"
                 ),
                 NavigationItemModel(
-                    name = "Profile",
-                    icon = NavigationDrawbleIcon(R.drawable.ic_launcher_foreground)
+                    name = "Details",
+                    icon = NavigationDrawbleIcon(R.drawable.ic_launcher_foreground),
+                    screen = "details_screen"
                 ),
                 NavigationItemModel(
                     name = "Search",
-                    icon = NavigationDrawbleIcon(R.drawable.ic_launcher_foreground)
+                    icon = NavigationDrawbleIcon(R.drawable.ic_launcher_foreground),
+                    screen = "home_screen"
                 ),
                 NavigationItemModel(
                     name = "Settings",
-                    icon = NavigationDrawbleIcon(R.drawable.ic_launcher_foreground)
+                    icon = NavigationDrawbleIcon(R.drawable.ic_launcher_foreground),
+                    screen = "login_screen"
                 )
             )
         )
