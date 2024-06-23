@@ -18,6 +18,8 @@ import androidx.navigation.compose.rememberNavController
 import com.example.travelbookingapp.components.Navigation
 import com.example.travelbookingapp.features.bottombar.ui.BottomNavigationBar
 import com.example.travelbookingapp.features.floatingbutton.FloatingButton
+import com.example.travelbookingapp.features.login.fields.FieldDisplayFactoryRegistry
+import com.example.travelbookingapp.features.settings.factory.SettingViewFactoryRegistry
 import com.example.travelbookingapp.ui.theme.TravelBookingAppTheme
 import com.example.travelbookingapp.utils.Utils
 
@@ -25,6 +27,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        FieldDisplayFactoryRegistry.getInstance().registerFields()
+        SettingViewFactoryRegistry.getInstance()
 
         enableEdgeToEdge()
         setContent {
@@ -55,7 +59,9 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier
                                 .fillMaxSize()
                         ) {
-                            Navigation(navController = navController)
+                            Navigation(
+                                navController = navController
+                            )
                         }
                     }
                 }
