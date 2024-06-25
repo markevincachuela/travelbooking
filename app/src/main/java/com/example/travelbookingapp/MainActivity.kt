@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         FieldDisplayFactoryRegistry.getInstance().registerFields()
-        SettingViewFactoryRegistry.getInstance()
+        SettingViewFactoryRegistry.getInstance().registerSettingview()
 
         enableEdgeToEdge()
         setContent {

@@ -1,40 +1,35 @@
 package com.example.travelbookingapp.features.settings.factory
 
-import com.example.travelbookingapp.features.settings.SettingsDisplay
-import com.example.travelbookingapp.features.settings.SettingsViewFactory
-import com.example.travelbookingapp.features.settings.views.SettingTitleDisplay
+import com.example.travelbookingapp.features.settings.SettingViewModelFactory
+import com.example.travelbookingapp.features.settings.views.SettingTitleViewFactory
 
-class SettingViewFactoryRegistry: SettingsViewFactory  {
+class SettingViewFactoryRegistry {
 
-    private val settingsFactoryRegistry = HashMap<String, () -> SettingsDisplay>()
+    private val settingsFactoryRegistry = HashMap<String, SettingViewModelFactory>()
 
-    init {
-        registerFactory("title") { SettingTitleDisplay() }
-        registerFactory("signOut") { SettingsSignOut() }
-    }
+   fun registerSettingview () {
+       registerFactory("title",SettingTitleViewFactory())
+   }
+
 
     companion object {
-        private var instance: SettingViewFactoryRegistry? = null
+        private lateinit var instance: SettingViewFactoryRegistry
+        private lateinit var factories: HashMap<String, SettingViewModelFactory>
 
         fun getInstance(): SettingViewFactoryRegistry {
-            if (instance == null) {
+            if (!Companion::instance.isInitialized) {
                 instance = SettingViewFactoryRegistry()
+                factories = HashMap()
             }
-            return instance!!
-        }
 
+            return instance
+        }
     }
 
-    private fun registerFactory(type: String, factory: () -> SettingsDisplay) {
+    private fun registerFactory(type: String, factory: SettingViewModelFactory) {
         settingsFactoryRegistry[type] = factory
     }
 
-
-    override fun makeView(type: String): SettingsDisplay? {
-        return settingsFactoryRegistry[type]?.invoke()
-    }
-
-//    fun getFactory(type: String) = settingsFactoryRegistry[type]
-
+    fun getFactory(type: String) = settingsFactoryRegistry[type]
 
 }
