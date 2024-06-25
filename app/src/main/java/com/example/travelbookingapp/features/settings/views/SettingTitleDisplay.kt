@@ -1,13 +1,19 @@
 package com.example.travelbookingapp.features.settings.views
 
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+
+import android.util.Log
+import com.example.travelbookingapp.features.settings.SettingViewModelElementFactory
 import com.example.travelbookingapp.features.settings.SettingsDisplay
 
-class SettingTitleDisplay: SettingsDisplay {
-
-    @Composable
-    override fun DisplaySettings() {
-        Text(text = "SettingTitleDisplay")
+data class SettingTitleDisplay(
+    val title: String
+): SettingViewModelElementFactory {
+    override fun makeView(): SettingsDisplay? {
+        val factory = getFactory("title")
+        val view = factory?.make() as? SettingTitleView
+        view?.title = title
+        Log.d("KEEEVS","SettingTitleDisplay: $title")
+        return view
     }
+
 }
