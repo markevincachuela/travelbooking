@@ -1,6 +1,8 @@
 package com.example.travelbookingapp.utils
 
 import com.example.travelbookingapp.R
+import com.example.travelbookingapp.components.images.BeachImages
+import com.example.travelbookingapp.components.images.BeachItems
 import com.example.travelbookingapp.features.bottombar.`interface`.NavigationDrawbleIcon
 import com.example.travelbookingapp.features.bottombar.model.NavigationBarItem
 import com.example.travelbookingapp.features.bottombar.model.NavigationItemModel
@@ -32,7 +34,18 @@ object Utils {
                 )
             )
         )
-
     }
+
+    fun getBeachImages(): BeachItems {
+        return BeachItems(
+            items = listOf(
+                BeachImages(images = R.drawable.login_background),
+                BeachImages(images = R.drawable.login_background),
+                BeachImages(images = R.drawable.login_background),
+                BeachImages(images = R.drawable.login_background)
+            )
+        )
+    }
+
 
 }
