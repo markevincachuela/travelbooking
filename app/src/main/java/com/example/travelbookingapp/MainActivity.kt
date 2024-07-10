@@ -27,6 +27,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val listOfImages = Utils.getBeachImages().items
+
         FieldDisplayFactoryRegistry.getInstance().registerFields()
         SettingViewFactoryRegistry.getInstance().registerSettingview()
 
@@ -60,7 +62,8 @@ class MainActivity : ComponentActivity() {
                                 .fillMaxSize()
                         ) {
                             Navigation(
-                                navController = navController
+                                navController = navController,
+                                listOfImages = listOfImages
                             )
                         }
                     }
