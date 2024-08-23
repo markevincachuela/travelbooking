@@ -28,6 +28,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         val listOfImages = Utils.getBeachImages().items
+        val categories = Utils.getCategories()
 
         FieldDisplayFactoryRegistry.getInstance().registerFields()
         SettingViewFactoryRegistry.getInstance().registerSettingview()
@@ -63,7 +64,8 @@ class MainActivity : ComponentActivity() {
                         ) {
                             Navigation(
                                 navController = navController,
-                                listOfImages = listOfImages
+                                listOfImages = listOfImages,
+                                categories = categories
                             )
                         }
                     }
