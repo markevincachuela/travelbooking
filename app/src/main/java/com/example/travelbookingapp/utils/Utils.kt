@@ -1,11 +1,14 @@
 package com.example.travelbookingapp.utils
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.FavoriteBorder
 import com.example.travelbookingapp.R
 import com.example.travelbookingapp.components.images.BeachItem
 import com.example.travelbookingapp.components.images.BeachItems
 import com.example.travelbookingapp.components.images.Categories
 import com.example.travelbookingapp.components.images.Category
 import com.example.travelbookingapp.components.images.CategorySelected
+import com.example.travelbookingapp.components.images.SubtitleDisplay
 import com.example.travelbookingapp.features.bottombar.`interface`.NavigationDrawbleIcon
 import com.example.travelbookingapp.features.bottombar.model.NavigationBarItem
 import com.example.travelbookingapp.features.bottombar.model.NavigationItemModel
@@ -23,7 +26,7 @@ object Utils {
                 NavigationItemModel(
                     name = "Details",
                     icon = NavigationDrawbleIcon(R.drawable.ic_launcher_foreground),
-                    screen = "details_screen"
+                    screen = "details_overview_screen"
                 ),
                 NavigationItemModel(
                     name = "Search",
@@ -91,7 +94,21 @@ object Utils {
                     image = R.drawable.login_background,
                     location = "Location",
                     description = "Description",
-                    category = CategorySelected.SPA
+                    category = CategorySelected.SPA,
+                    subTitleDisplay = listOf(
+                        SubtitleDisplay(
+                            icon = Icons.Default.FavoriteBorder,
+                            title = "Kevs 1-1"
+                        ),
+                        SubtitleDisplay(
+                            icon = Icons.Default.FavoriteBorder,
+                            title = "KEVS 1-2"
+                        ),
+                        SubtitleDisplay(
+                            icon = Icons.Default.FavoriteBorder,
+                            title = "kevs 1-3"
+                        )
+                    )
                 ),
                 Category(
                     id = 2,
@@ -99,7 +116,18 @@ object Utils {
                     image = R.drawable.login_background,
                     location = "Location",
                     description = "Description",
-                    category = CategorySelected.BEACH
+                    category = CategorySelected.BEACH,
+                    subTitleDisplay = listOf(
+                        SubtitleDisplay(
+                            icon = Icons.Default.FavoriteBorder,
+                            title = "Title 1"
+                        ),
+                        SubtitleDisplay(
+                            icon = Icons.Default.FavoriteBorder,
+                            title = "Title 2"
+                        ),
+
+                    )
                 ),
                 Category(
                     id = 3,
@@ -107,7 +135,13 @@ object Utils {
                     image = R.drawable.login_background,
                     location = "Location",
                     description = "Description",
-                    category = CategorySelected.TOURIST
+                    category = CategorySelected.TOURIST,
+                    subTitleDisplay = listOf(
+                        SubtitleDisplay(
+                            icon = Icons.Default.FavoriteBorder,
+                            title = "Title"
+                        )
+                    )
                 ),
                 Category(
                     id = 4,
@@ -115,7 +149,13 @@ object Utils {
                     image = R.drawable.login_background,
                     location = "Location",
                     description = "Description",
-                    category = CategorySelected.BEACH
+                    category = CategorySelected.BEACH,
+                    subTitleDisplay = listOf(
+                        SubtitleDisplay(
+                            icon = Icons.Default.FavoriteBorder,
+                            title = "Title"
+                        )
+                    )
                 ),
                 Category(
                     id = 5,
@@ -123,9 +163,14 @@ object Utils {
                     image = R.drawable.login_background,
                     location = "Location",
                     description = "Description",
-                    category = CategorySelected.SPA
+                    category = CategorySelected.SPA,
+                    subTitleDisplay = listOf(
+                        SubtitleDisplay(
+                            icon = Icons.Default.FavoriteBorder,
+                            title = "Title"
+                        )
+                    )
                 ),
-
             )
         )
     }
