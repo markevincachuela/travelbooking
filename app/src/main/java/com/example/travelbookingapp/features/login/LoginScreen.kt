@@ -1,5 +1,6 @@
 package com.example.travelbookingapp.features.login
 
+import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -13,7 +14,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -36,6 +36,7 @@ import com.example.travelbookingapp.features.login.fields.FieldDisplayFactoryReg
 import com.example.travelbookingapp.features.login.viewmodel.LoginViewModel
 import kotlinx.coroutines.delay
 
+@SuppressLint("UnusedBoxWithConstraintsScope")
 @Composable
 fun LoginScreen(
     navController: NavController,
