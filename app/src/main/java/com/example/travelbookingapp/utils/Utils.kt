@@ -46,38 +46,26 @@ object Utils {
         return BeachItems(
             items = listOf(
                 BeachItem(
-                    images = R.drawable.login_background,
+                    images = R.drawable.beach,
                     title = "kevs1",
                     subTitle = "",
                     description = ""
                 ),
                 BeachItem(
-                    images = R.drawable.login_background,
+                    images = R.drawable.beach1,
                     title = "kevs2",
                     subTitle = "",
                     description = ""
                 ),
                 BeachItem(
-                    images = R.drawable.login_background,
+                    images = R.drawable.beach2,
                     title = "kevs3",
                     subTitle = "",
                     description = ""
                 ),
                 BeachItem(
-                    images = R.drawable.login_background,
+                    images = R.drawable.beach4,
                     title = "kevs4",
-                    subTitle = "",
-                    description = ""
-                ),
-                BeachItem(
-                    images = R.drawable.login_background,
-                    title = "kevs5",
-                    subTitle = "",
-                    description = ""
-                ),
-                BeachItem(
-                    images = R.drawable.login_background,
-                    title = "kevs6",
                     subTitle = "",
                     description = ""
                 )
@@ -90,30 +78,22 @@ object Utils {
             categoriesItem = listOf(
                 Category(
                     id = 1,
-                    title = "kevs1",
-                    image = R.drawable.login_background,
+                    title = "Beach1",
+                    image = R.drawable.beach1,
                     location = "Location",
                     description = "Description",
                     category = CategorySelected.SPA,
                     subTitleDisplay = listOf(
                         SubtitleDisplay(
                             icon = Icons.Default.FavoriteBorder,
-                            title = "Kevs 1-1"
-                        ),
-                        SubtitleDisplay(
-                            icon = Icons.Default.FavoriteBorder,
-                            title = "KEVS 1-2"
-                        ),
-                        SubtitleDisplay(
-                            icon = Icons.Default.FavoriteBorder,
-                            title = "kevs 1-3"
+                            title = "Beach rate 1-1"
                         )
                     )
                 ),
                 Category(
                     id = 2,
-                    title = "kevs2",
-                    image = R.drawable.login_background,
+                    title = "Beach2",
+                    image = R.drawable.beach2,
                     location = "Location",
                     description = "Description",
                     category = CategorySelected.BEACH,
@@ -131,8 +111,8 @@ object Utils {
                 ),
                 Category(
                     id = 3,
-                    title = "kevs3",
-                    image = R.drawable.login_background,
+                    title = "Beach3",
+                    image = R.drawable.beach3,
                     location = "Location",
                     description = "Description",
                     category = CategorySelected.TOURIST,
@@ -145,8 +125,8 @@ object Utils {
                 ),
                 Category(
                     id = 4,
-                    title = "kevs4",
-                    image = R.drawable.login_background,
+                    title = "Beach4",
+                    image = R.drawable.beach4,
                     location = "Location",
                     description = "Description",
                     category = CategorySelected.BEACH,
@@ -156,21 +136,7 @@ object Utils {
                             title = "Title"
                         )
                     )
-                ),
-                Category(
-                    id = 5,
-                    title = "kevs5",
-                    image = R.drawable.login_background,
-                    location = "Location",
-                    description = "Description",
-                    category = CategorySelected.SPA,
-                    subTitleDisplay = listOf(
-                        SubtitleDisplay(
-                            icon = Icons.Default.FavoriteBorder,
-                            title = "Title"
-                        )
-                    )
-                ),
+                )
             )
         )
     }

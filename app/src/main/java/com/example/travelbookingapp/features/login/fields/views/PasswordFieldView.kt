@@ -1,8 +1,14 @@
 package com.example.travelbookingapp.features.login.fields.views
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.example.travelbookingapp.features.login.fields.FieldType
 import com.example.travelbookingapp.features.login.fields.IFieldDisplay
@@ -13,9 +19,14 @@ class PasswordFieldView(
 ): BaseFieldView(fieldType){
     @Composable
     override fun LoginDisplay(modifier: Modifier) {
-        Row {
-            Text(text = "LOGIN PASSWORD")
-            Text(text = " ghghghghg")
+        var text by remember { mutableStateOf("") }
+        Column {
+            Text(text = "Password")
+            TextField(
+                value = text,
+                onValueChange = { text = it },
+                label = { Text("Enter text") }
+            )
         }
 
     }

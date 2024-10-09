@@ -19,7 +19,6 @@ fun Navigation(
     navController: NavHostController,
     listOfImages : List<BeachItem>,
     categories: Categories,
-    fragmentManager: FragmentManager
 ) {
 
     val loginViewModel = LoginViewModel()
@@ -37,7 +36,6 @@ fun Navigation(
             DetailsOverviewScreen(
                 navController = navController,
                 categories = categories,
-                fragmentManager = fragmentManager
             )
         }
         composable(Screen.Loginscreen.route) {
@@ -50,6 +48,10 @@ fun Navigation(
             DetailScreenView(
                 navController = navController
             )
+        }
+        
+        composable(Screen.SettingsScreen.route) {
+
         }
     }
 }

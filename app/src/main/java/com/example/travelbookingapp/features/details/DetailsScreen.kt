@@ -41,6 +41,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.fragment.app.FragmentManager
@@ -54,7 +55,6 @@ import com.skydoves.landscapist.glide.GlideImage
 fun DetailsOverviewScreen(
     navController: NavController,
     categories: Categories,
-    fragmentManager: FragmentManager
 ) {
 
     Box(
@@ -91,6 +91,7 @@ fun CategoriesItem(
     navController: NavController
 ) {
 
+    //Flag for expanding the content
     var expanded by remember { mutableStateOf(false) }
     Surface(
         color = MaterialTheme.colorScheme.primary,
@@ -113,8 +114,10 @@ fun CategoriesItem(
             }, label = ""
         ) { targetExpanded ->
             if (targetExpanded) {
+                // If the target state is true, expand the content.
                 TestExpand(categories)
             } else {
+                // If the target state is false, collapse the content.
                 ContentIcon(categories)
             }
         }
@@ -130,7 +133,7 @@ fun TestExpand(categories: Category) {
         GlideImage(
             modifier = Modifier.size(600.dp),
             contentScale = ContentScale.Crop,
-            imageModel = R.drawable.home_beach_screen,
+            imageModel = categories.image,
         )
 
         Column(
@@ -183,7 +186,6 @@ fun TestExpand(categories: Category) {
                         SubTitlesSection(categories)
                     }
 
-                    Text(text = "asdasdsa")
 
                     Spacer(modifier = Modifier.height(10.dp))
 
@@ -194,7 +196,7 @@ fun TestExpand(categories: Category) {
                     Text(text = "About")
 
                     Spacer(modifier = Modifier.height(10.dp))
-                    Text(text = "ADASDASDASDASDSADASDDASDASDASDASDDSADASDASDSADASDASDASDSsdadsaDSADSAADASDASDASDASDASDdsdsadASDASDSADSADSADASDAS")
+                    Text(text = stringResource(id = R.string.desciption1))
 
                 }
             }
@@ -225,17 +227,23 @@ fun SubTitlesSection(categories: Category) {
 
 @Composable
 fun ContentIcon(categories: Category) {
-    Box(modifier = Modifier.fillMaxWidth()) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+    ) {
 
         Column(
             modifier = Modifier
-                .background(Color.Magenta)
+                .clip(RoundedCornerShape(20.dp))
+                .background(MaterialTheme.colorScheme.primary)
                 .fillMaxWidth()
         ) {
 
             Row(Modifier.padding(10.dp)) {
                 Image(
                     modifier = Modifier
+                        .clip(RoundedCornerShape(20.dp))
+                        .width(200.dp)
                         .height(140.dp),
                     painter = painterResource(id = categories.image),
                     contentDescription = "Category Image",

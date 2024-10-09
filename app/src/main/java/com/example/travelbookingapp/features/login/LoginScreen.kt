@@ -68,7 +68,7 @@ fun LoginScreen(
     ) {
 
         Image(
-            painter = painterResource(id = R.drawable.login_background),
+            painter = painterResource(id = R.drawable.home_beach_screen),
             contentDescription = "Login Background",
             modifier = Modifier.matchParentSize(),
             contentScale = ContentScale.Crop

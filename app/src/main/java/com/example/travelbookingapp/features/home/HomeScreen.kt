@@ -28,6 +28,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,24 +48,13 @@ fun HomeScreen(
 
 
     val pagerState = rememberPagerState(pageCount = { listOfImages.size })
-
-    val test = PersonBuilder.Builder()
-        .setFirstname("Mark kevin")
-        .setLastname("Cachuela")
-        .setAge(1)
-        .type("Student")
-        .build()
-
-    test.personModel.let {
-
-    }
     val scrollState = rememberScrollState()
-
 
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.White)
+            .padding(10.dp)
             .verticalScroll(scrollState)
     ) {
         Row(
@@ -75,12 +65,12 @@ fun HomeScreen(
                 .padding(5.dp)
         ) {
             RoundedImage(
-                image = painterResource(R.drawable.login_background),
+                image = painterResource(R.drawable.ic_launcher_background),
                 cornerRadius = 50.dp
             )
-            Text(text = "World")
+            Text(text = "Travel App")
 
-            Text(text = "test")
+            Text(text = "version.1")
 
         }
 
@@ -111,16 +101,17 @@ fun HomeScreen(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Text(text = "Name place")
-                    Text(text = "What to do")
+                    Text(text = stringResource(id = R.string.name_place))
+                    Text(text = stringResource(id = R.string.what_to_do))
                 }
                 Spacer(modifier = Modifier.height(250.dp))
                 Text(
-                    text = "Dasda",
+                    text = stringResource(id = R.string.introduction),
                     color = Color.White
                 )
+                Spacer(modifier = Modifier.height(10.dp))
                 Text(
-                    text = "description asdasdasdasdas dasdas dasdas dasddas dasd das d sad sa asd as dasd as asd asd asd as dasd a",
+                    text = stringResource(id = R.string.desciption),
                     color = Color.White,
                     overflow = TextOverflow.Clip
                 )
