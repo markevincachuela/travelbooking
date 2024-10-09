@@ -1,7 +1,7 @@
 package com.example.travelbookingapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,19 +20,19 @@ import com.example.travelbookingapp.components.Navigation
 import com.example.travelbookingapp.features.bottombar.ui.BottomNavigationBar
 import com.example.travelbookingapp.features.floatingbutton.FloatingButton
 import com.example.travelbookingapp.features.login.fields.FieldDisplayFactoryRegistry
-import com.example.travelbookingapp.features.settings.factory.SettingViewFactoryRegistry
 import com.example.travelbookingapp.ui.theme.TravelBookingAppTheme
 import com.example.travelbookingapp.utils.Utils
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val listOfImages = Utils.getBeachImages().items
         val categories = Utils.getCategories()
 
+
         FieldDisplayFactoryRegistry.getInstance().registerFields()
-        SettingViewFactoryRegistry.getInstance().registerSettingview()
 
         enableEdgeToEdge()
         setContent {
@@ -67,28 +67,11 @@ class MainActivity : AppCompatActivity() {
                                 navController = navController,
                                 listOfImages = listOfImages,
                                 categories = categories,
-                                fragmentManager = supportFragmentManager
                             )
                         }
                     }
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    TravelBookingAppTheme {
-        Greeting("Android")
     }
 }

@@ -1,5 +1,6 @@
 package com.example.travelbookingapp.features.bottombar.ui
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -26,6 +27,7 @@ import androidx.navigation.NavController
 import com.example.travelbookingapp.features.bottombar.model.NavigationBarItem
 import com.example.travelbookingapp.features.bottombar.model.NavigationItemModel
 
+@SuppressLint("RestrictedApi")
 @Composable
 fun BottomNavigationBar(
     navigation: NavigationBarItem,
@@ -35,7 +37,11 @@ fun BottomNavigationBar(
     var selectedItem by remember { mutableIntStateOf(0) }
     fun onTapMenuItem(menuItem : NavigationItemModel) {
         selectedItem = navigation.items.indexOf(menuItem)
-        navController.navigate(menuItem.screen)
+        if (navController.currentBackStack.value.find { it.destination.route == menuItem.screen } != null) {
+            navController.popBackStack(menuItem.screen, inclusive = false)
+        } else {
+            navController.navigate(menuItem.screen)
+        }
     }
 
     val midButton = (navigation.items.count() / 2) + 1
