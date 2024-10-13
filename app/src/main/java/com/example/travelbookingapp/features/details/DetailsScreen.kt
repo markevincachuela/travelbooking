@@ -44,11 +44,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
-import androidx.fragment.app.FragmentManager
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.travelbookingapp.R
 import com.example.travelbookingapp.components.images.Categories
 import com.example.travelbookingapp.components.images.Category
+import com.example.travelbookingapp.components.titleText.view.TitleViewDisplay
 import com.skydoves.landscapist.glide.GlideImage
 
 @Composable
@@ -65,7 +66,11 @@ fun DetailsOverviewScreen(
 
         Column {
 
-            Text(text = "Details")
+            TitleViewDisplay.CreateTitleScreen(
+                title = "Details Screen",
+                fontSize = 30.sp,
+                subtitle = "Sub Title"
+            )
 
             Spacer(modifier = Modifier.height(50.dp))
 

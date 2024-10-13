@@ -36,7 +36,7 @@ import androidx.navigation.NavController
 import com.example.travelbookingapp.R
 import com.example.travelbookingapp.components.images.BeachItem
 import com.example.travelbookingapp.components.images.RoundedImage
-import com.example.travelbookingapp.features.useraccount.builder.PersonBuilder
+import com.example.travelbookingapp.components.titleText.view.TitleViewDisplay
 import com.example.travelbookingapp.utils.Screen
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -68,7 +68,12 @@ fun HomeScreen(
                 image = painterResource(R.drawable.ic_launcher_background),
                 cornerRadius = 50.dp
             )
-            Text(text = "Travel App")
+
+            TitleViewDisplay.CreateTitleScreen(
+                title = "Travel app",
+                fontSize = 15.sp,
+                subtitle = ""
+            )
 
             Text(text = "version.1")
 
