@@ -7,4 +7,12 @@
     <string name="name_place">Name place</string>
     <string name="what_to_do">What to do</string>
     <string name="introduction">Introduction</string>
+    <string name="close_button">Close Button</string>
+    <string name="login_background">Login Background</string>
+    <string name="travel_app">Travel app</string>
+    <string name="categories">Categories</string>
+    <string name="see_all">See all</string>
+    <string name="beach_image">Beach Image</string>
+    <string name="details_screen">Details Screen</string>
+    <string name="sub_title">Sub Title</string>
 </resources>

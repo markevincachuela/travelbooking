@@ -26,6 +26,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
@@ -69,14 +70,14 @@ fun LoginScreen(
 
         Image(
             painter = painterResource(id = R.drawable.home_beach_screen),
-            contentDescription = "Login Background",
+            contentDescription = stringResource(R.string.login_background),
             modifier = Modifier.matchParentSize(),
             contentScale = ContentScale.Crop
         )
 
         CloseButton(
             imageVector = Icons.Default.Close,
-            contentDescription = "Close Button",
+            contentDescription = stringResource(R.string.close_button),
             onClick = { navController.popBackStack() },
             config = CloseIconButtonConfig.default(
                 backgroundColor = closeButtonBackgroundColor,

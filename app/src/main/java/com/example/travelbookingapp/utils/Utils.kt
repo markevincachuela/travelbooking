@@ -47,25 +47,25 @@ object Utils {
             items = listOf(
                 BeachItem(
                     images = R.drawable.beach,
-                    title = "kevs1",
+                    title = "beach1",
                     subTitle = "",
                     description = ""
                 ),
                 BeachItem(
                     images = R.drawable.beach1,
-                    title = "kevs2",
+                    title = "beach2",
                     subTitle = "",
                     description = ""
                 ),
                 BeachItem(
                     images = R.drawable.beach2,
-                    title = "kevs3",
+                    title = "beach3",
                     subTitle = "",
                     description = ""
                 ),
                 BeachItem(
                     images = R.drawable.beach4,
-                    title = "kevs4",
+                    title = "beach4",
                     subTitle = "",
                     description = ""
                 )

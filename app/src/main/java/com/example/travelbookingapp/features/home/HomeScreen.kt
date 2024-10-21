@@ -70,7 +70,7 @@ fun HomeScreen(
             )
 
             TitleViewDisplay.CreateTitleScreen(
-                title = "Travel app",
+                title = stringResource(R.string.travel_app),
                 fontSize = 15.sp,
                 subtitle = ""
             )
@@ -88,7 +88,7 @@ fun HomeScreen(
         ) {
             Image(
                 painter = painterResource(id = R.drawable.home_beach_screen),
-                contentDescription = "Login Background",
+                contentDescription = stringResource(R.string.login_background),
                 modifier = Modifier.matchParentSize(),
                 contentScale = ContentScale.Crop
             )
@@ -143,12 +143,12 @@ fun HomeScreen(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(text = "Categories")
+                    Text(text = stringResource(R.string.categories))
                     Text(
                         modifier = Modifier.clickable {
                             navController.navigate(Screen.DetailsOverviewScreen.route)
                         },
-                        text = "See all",
+                        text = stringResource(R.string.see_all),
                     )
                 }
                 HorizontalPager(
@@ -191,7 +191,7 @@ fun BeachListScreen(
                 .clip(RoundedCornerShape(10.dp))
                 .size(120.dp),
             painter = painterResource(id = beachItem.images),
-            contentDescription = "Beach Image",
+            contentDescription = stringResource(R.string.beach_image),
             contentScale = ContentScale.FillHeight
         )
         Text(
