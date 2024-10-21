@@ -67,9 +67,9 @@ fun DetailsOverviewScreen(
         Column {
 
             TitleViewDisplay.CreateTitleScreen(
-                title = "Details Screen",
+                title = stringResource(R.string.details_screen),
                 fontSize = 30.sp,
-                subtitle = "Sub Title"
+                subtitle = stringResource(R.string.sub_title)
             )
 
             Spacer(modifier = Modifier.height(50.dp))
