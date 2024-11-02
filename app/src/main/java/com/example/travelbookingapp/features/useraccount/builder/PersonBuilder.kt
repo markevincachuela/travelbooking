@@ -1,39 +1,49 @@
 package com.example.travelbookingapp.features.useraccount.builder
 
-import com.example.travelbookingapp.features.useraccount.`interface`.UserBuilder
 import com.example.travelbookingapp.features.useraccount.model.PersonModel
 
-class PersonBuilder private constructor(
-    val personModel: PersonModel
-) {
-    class Builder : UserBuilder {
-        private var firstName: String = ""
-        private var lastName: String = ""
-        private var age: Int = 0
-        private var type: String? = null
-        override fun setFirstname(firstname: String) = apply {
-            this.firstName = firstname
-        }
+class PersonBuilder {
 
-        override fun setLastname(lastname: String) = apply {
-            this.lastName = lastname
-        }
+    private var firstName: String = ""
+    private var lastName: String = ""
+    private var age: Int = 0
+    private var type: String? = null
 
-        override fun setAge(age: Int) = apply {
-            this.age = age
-        }
+    private fun createAccountBuilder(block: PersonBuilder.() -> Unit) =
+        PersonBuilder().apply(block).build()
 
-        override fun type(type: String?) = apply {
-            this.type = type
-        }
+    private fun build(): PersonModel = PersonModel(
+        firstName = firstName,
+        lastName = lastName,
+        age = age,
+        type = type
+    )
 
-        override fun build(): PersonBuilder = PersonBuilder(
-            personModel = PersonModel(
-                firstName = firstName,
-                lastName = lastName,
-                age = age,
-                type = type
-            )
-        )
+    // Setter functions (add these)
+    private fun setFirstname(firstname: String) {
+        this.firstName = firstname
+    }
+    private fun setLastname(lastName: String) {
+        this.lastName = lastName
+    }
+    private fun setAge(age: Int) {
+        this.age = age
+    }
+    private fun setType(type: String?) {
+        this.type = type
+    }
+
+    fun createAccount(
+        firstname: String,
+        lastName: String,
+        age: Int,
+        type: String?
+    ): PersonModel {
+        return createAccountBuilder {
+            setFirstname(firstname)
+            setLastname(lastName)
+            setAge(age)
+            setType(type)
+        }
     }
 }

@@ -2,6 +2,7 @@ package com.example.travelbookingapp
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,7 @@ import com.example.travelbookingapp.components.Navigation
 import com.example.travelbookingapp.features.bottombar.ui.BottomNavigationBar
 import com.example.travelbookingapp.features.floatingbutton.FloatingButton
 import com.example.travelbookingapp.features.login.fields.FieldDisplayFactoryRegistry
+import com.example.travelbookingapp.features.useraccount.builder.PersonBuilder
 import com.example.travelbookingapp.ui.theme.TravelBookingAppTheme
 import com.example.travelbookingapp.utils.Utils
 
@@ -30,6 +32,15 @@ class MainActivity : AppCompatActivity() {
 
         val listOfImages = Utils.getBeachImages().items
         val categories = Utils.getCategories()
+
+        val account = PersonBuilder().createAccount(
+            firstname = "kevs",
+            lastName = "cachuela",
+            age = 20,
+            type = "user"
+        )
+
+        Log.d("KEEEVS", account.toString())
 
 
         FieldDisplayFactoryRegistry.getInstance().registerFields()
